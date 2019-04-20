@@ -1,0 +1,21 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Mac
+.DS_Store
+.metadata
+
+# Windows
+Thumbs.db
+
+# Maven
+target/
+pom.xml.versionsBackup
