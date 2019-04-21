@@ -1,6 +1,6 @@
 maven-parent-poms
 ====================
-[![Build Status](https://travis-ci.org/LiquoriceLabs/maven-parent-poms.svg?branch=master)](https://travis-ci.org/LiquoriceLabs/liquorice-config)
+[![Build Status](https://travis-ci.org/LiquoriceLabs/maven-parent-poms.svg?branch=master)](https://travis-ci.org/LiquoriceLabs/maven-parent-poms)
 
 ```xml
   <parent>
