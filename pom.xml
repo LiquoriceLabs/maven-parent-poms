@@ -4,7 +4,7 @@
 
   <groupId>io.liquorice</groupId>
   <artifactId>maven-parent-poms</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <packaging>pom</packaging>
 
@@ -263,6 +263,11 @@
   <profiles>
     <profile>
       <id>integration-tests</id>
+      <activation>
+        <property>
+          <name>full-build</name>
+        </property>
+      </activation>
       <build>
         <plugins>
           <plugin>
@@ -274,6 +279,11 @@
     </profile>
     <profile>
       <id>code-coverage</id>
+      <activation>
+        <property>
+          <name>full-build</name>
+        </property>
+      </activation>
       <properties>
         <jacoco.haltOnFailure>true</jacoco.haltOnFailure>
       </properties>
@@ -288,6 +298,11 @@
     </profile>
     <profile>
       <id>static-code-analysis</id>
+      <activation>
+        <property>
+          <name>full-build</name>
+        </property>
+      </activation>
       <properties>
         <checkstyle.config.file>${maven.maven-checkstyle-plugin.configFile}</checkstyle.config.file>
         <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
