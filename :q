@@ -1,0 +1,22 @@
+# This is a combination of 2 commits.
+# This is the 1st commit message:
+
+Travis and maven settings fixes
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Tue Nov 19 22:12:48 2019 -0500
+#
+# interactive rebase in progress; onto 0d70a5e
+# Last commands done (2 commands done):
+#    pick 4dbbe2a Travis and maven settings fixes
+#    squash 607344b w
+# No commands remaining.
+# You are currently rebasing branch 'fix-wrong-env' on '0d70a5e'.
+#
+# Changes to be committed:
+#	modified:   .travis.yml
+#	modified:   maven-settings.xml
+#	modified:   pom.xml
+#

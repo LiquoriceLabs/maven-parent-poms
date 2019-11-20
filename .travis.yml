@@ -1,23 +1,17 @@
 dist: trusty
 language: java
 sudo: false
-
-# Test against both official and openjdk
-matrix:
-  include:
-  - os: linux
-    jdk: oraclejdk11
-  - os: linux
-    jdk: openjdk11
+jdk:
+  - openjdk11
 
 # Only build master and pull requests
 branches:
   only:
     - master
 
-script: ./mvnw clean verify -Dfull-build
-
 install: ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+script: ./mvnw clean verify -Dfull-build
 
 # Only deploy artifacts to nexus if master changes
 deploy:
