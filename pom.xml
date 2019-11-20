@@ -5,7 +5,7 @@
 
     <groupId>io.liquorice</groupId>
     <artifactId>maven-parent-poms</artifactId>
-    <version>2.1.1</version>
+    <version>2.1.2</version>
 
     <packaging>pom</packaging>
 
@@ -37,8 +37,6 @@
         <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
         <maven.buildnumber-maven-plugin.version>1.4</maven.buildnumber-maven-plugin.version>
-        <maven.github.spotbugs.excludeBugsFile>spotbugs-exclude.xml</maven.github.spotbugs.excludeBugsFile>
-        <maven.github.spotbugs.version>3.1.11</maven.github.spotbugs.version>
         <maven.jacoco-maven-plugin.version>0.8.3</maven.jacoco-maven-plugin.version>
         <maven.maven-checkstyle-plugin.version>3.0.0</maven.maven-checkstyle-plugin.version>
         <maven.maven-checkstyle-plugin.configFile>google_checks.xml</maven.maven-checkstyle-plugin.configFile>
@@ -52,6 +50,8 @@
         <maven.maven-project-info-reports-plugin.version>3.0.0</maven.maven-project-info-reports-plugin.version>
         <maven.maven-surefire-plugin.version>3.0.0-M3</maven.maven-surefire-plugin.version>
         <maven.puppycrawl.tools.version>8.19</maven.puppycrawl.tools.version>
+        <maven.spotbugs-maven-plugin.excludeFilterFile>${basedir}/../spotbugs-exclude.xml</maven.spotbugs-maven-plugin.excludeFilterFile>
+        <maven.spotbugs-maven-plugin.version>3.1.11</maven.spotbugs-maven-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -228,7 +228,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>${maven.github.spotbugs.version}</version>
+                    <version>${maven.spotbugs-maven-plugin.version}</version>
                     <executions>
                         <execution>
                             <id>findbugs</id>
@@ -241,7 +241,7 @@
                         <effort>Max</effort>
                         <threshold>Low</threshold>
                         <xmlOutput>true</xmlOutput>
-                        <excludeBugsFile>${spotbugs.excludeBugsFile}</excludeBugsFile>
+                        <excludeFilterFile>${spotbugs.excludeFilterFile}</excludeFilterFile>
                     </configuration>
                 </plugin>
             </plugins>
@@ -325,7 +325,7 @@
                 <checkstyle.skip>${skipTests}</checkstyle.skip>
                 <spotbugs.failOnError>true</spotbugs.failOnError>
                 <spotbugs.skip>${skipTests}</spotbugs.skip>
-                <spotbugs.excludeBugsFile>${maven.github.spotbugs.excludeBugsFile}</spotbugs.excludeBugsFile>
+                <spotbugs.excludeFilterFile>${maven.spotbugs-maven-plugin.excludeFilterFile}</spotbugs.excludeFilterFile>
             </properties>
         </profile>
     </profiles>
