@@ -5,7 +5,7 @@
 
     <groupId>io.liquorice</groupId>
     <artifactId>maven-parent-poms</artifactId>
-    <version>2.0.2</version>
+    <version>2.1.0</version>
 
     <packaging>pom</packaging>
 
@@ -33,10 +33,11 @@
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-        <maven.compiler.showDeprecation>false</maven.compiler.showDeprecation>
-        <maven.compiler.showWarnings>false</maven.compiler.showWarnings>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
         <maven.buildnumber-maven-plugin.version>1.4</maven.buildnumber-maven-plugin.version>
+        <maven.github.spotbugs.excludeBugsFile>../spotbugs-exclude.xml</maven.github.spotbugs.excludeBugsFile>
         <maven.github.spotbugs.version>3.1.11</maven.github.spotbugs.version>
         <maven.jacoco-maven-plugin.version>0.8.3</maven.jacoco-maven-plugin.version>
         <maven.maven-checkstyle-plugin.version>3.0.0</maven.maven-checkstyle-plugin.version>
@@ -240,6 +241,7 @@
                         <effort>Max</effort>
                         <threshold>Low</threshold>
                         <xmlOutput>true</xmlOutput>
+                        <excludeBugsFile>${spotbugs.excludeBugsFile}</excludeBugsFile>
                     </configuration>
                 </plugin>
             </plugins>
@@ -323,6 +325,7 @@
                 <checkstyle.skip>${skipTests}</checkstyle.skip>
                 <spotbugs.failOnError>true</spotbugs.failOnError>
                 <spotbugs.skip>${skipTests}</spotbugs.skip>
+                <spotbugs.excludeBugsFile>${maven.github.spotbugs.excludeBugsFile}</spotbugs.excludeBugsFile>
             </properties>
         </profile>
     </profiles>
